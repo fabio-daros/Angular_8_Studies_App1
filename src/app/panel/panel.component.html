@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class='row'>
+            <div class="col-sm-6">
+                <app-progress [progress]="progress"></app-progress>
+                <!--Componente progresso dentro do painel para enviar para o progresso no @Input()-->
+            </div>
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end">
+                    <app-attempts [attempts]="attempts"></app-attempts>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h6>{{ instruction }}</h6>
+                <!--recuperando a instrução com string interpolation {{}}-->
+                
+                <p>{{ roundPhrase.phraseEng }}</p>
+                <!--recuperando o objeto phrases na posicao de array 0 com string interpolation {{}} que será apresentada no panel-->
+
+                <!--PEGANDO O QUE FOI DIGITADO NA CAIXA DE TEXTO-->
+
+                <div class="form-group">
+                    <textarea class="form-control" rows="1" (input)="updateAnswer($event)" [value]="answer"></textarea>
+                    <!--[value] two way bind para limpar o campo digitado-->
+                    <!--(input) associado a classe responsavel por pegar o que foi digitado em panel.component.ts-->
+                    <!--$event é uma palavra reservada do angular que serve para pegar o conteudo de um campo que esta sendo digitado por exemplo-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary" (click)="checkAnswer()">CHECK_.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

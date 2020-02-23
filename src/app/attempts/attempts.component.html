@@ -1,0 +1,7 @@
+<!-- HardCoded... <img [src]="emptyHeart"> Ao usar os [] no src o angular sabe que trata-se de propertybinding puxandos as imagens ou assets do attempts.component.ts-->
+<!-- HardCoded... <img [src]="fullHeart">  Ao usar os [] no src o angular sabe que trata-se de propertybinding puxandos as imagens ou assets do attempts.component.ts-->
+<!-- HardCoded... <img [src]="fullHeart">  Ao usar os [] no src o angular sabe que trata-se de propertybinding puxandos as imagens ou assets do attempts.component.ts-->
+
+<!--OBS: nunca usar o {{}} com o [] interpolation e propertybiding-->
+
+<img *ngFor="let heart of hearts" [src]="heart.showHeart()" /> <!-- Pega a classe do heart.model.ts usando o array de coracoes-->
